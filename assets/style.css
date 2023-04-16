@@ -15,16 +15,16 @@ header {
 }
 
 :root {
-  --outer-space: #33393f;
-  --bright-turquoise: #2f79ce;
-  --gin: #e0eae4;
-  --heliotrope: #4DE8C4;
+  --dgray: #33393f;
+  --blue: #2f79ce;
+  --white: #f1f8f4;
+  --turquoise: #4DE8C4;
   
 }
 
 ::selection {
-  background-color: var(--bright-turquoise);
-  color: var(--outer-space);
+  background-color: var(--blue);
+  color: var(--dgray);
 }
 
 html {
@@ -36,12 +36,12 @@ body {
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 1.75rem;
   line-height: 1.5;
-  color: var(--gin);
-  background-color: var(--outer-space);
+  color: var(--white);
+  background-color: var(--dgray);
 }
 
 a{
-  color:var(--heliotrope);
+  color:var(--turquoise);
 }
 
 h1,
@@ -51,17 +51,24 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.625rem;
-  color: var(--heliotrope);
-  font-weight: 700;
+  color: var(--turquoise);
+  font-weight: 500;
   line-height: 1.1;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 400px;
+}
 p {
   margin-bottom: 1rem;
 }
 
 header {
-  width: 96%;
+  width: 100%;
   margin: 0 auto;
   padding: 2.5rem;
   text-align: center;
@@ -69,7 +76,7 @@ header {
 
 header h1.page-title {
   padding: 1rem 1.2rem;
-  font-size: 4.5rem;
+  font-size: 9rem;
 }
 
 main {
@@ -82,7 +89,6 @@ footer {
   text-align: center;
 }
 
-/* create our main grid with flexbox, use negative margins to offset the padding on the .card-column class */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -95,17 +101,15 @@ footer {
   justify-content: center;
 }
 
-/* using a mobile-first approach, set base column width to be 100% and we'll update it using media queries for larger screen sizes */
 .card-column {
   flex: 1 0 100%;
   padding: 1.5rem;
-  /* when the screen resizes, make it so our columns don't jump in size */
   transition: flex-basis 500ms linear;
   margin-bottom: 1.5rem;
 }
 
-/* make each code card a flexbox column to align and justify content within it */
-.code-card {
+
+.project-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,42 +117,39 @@ footer {
   padding: 2rem;
   color: var(--heliotrope);
 
-  /* outline is like border, but on the outside of the box instead of inside */
-  outline: 2px solid var(--gin);
+
+  outline: 2px solid var(--white);
   outline-offset: -2px;
   transition: all 0.5s ease-in-out;
 }
 
-.code-card .card-header {
-  /* use position and negative margins to move title of card over the card's outline and create an overlap effect */
+.project-card .card-header {
   position: relative;
   margin: -4rem 0 1.5rem 0;
   padding: 0.5rem 1rem;
-  background-color: var(--outer-space);
-  color: var(--heliotrope);
-  border: 2px solid var(--gin);
+  background-color: var(--dgray);
+  color: var(--turquoise);
+  border: 2px solid var(--white);
   border-radius: 8px;
   transition: all 0.5s ease-in-out;
 }
 
-/* set an outer and inner drop shadow on the card to create a glowing effect on hover */
-.code-card:hover,
-.code-card:hover .card-header {
-  box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--heliotrope);
+.project-card:hover,
+.project-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px var(--turquoise), 0 0 15px var(--turquoise);
 }
 
-/* each card's code block grows to the height of the largest code block on the page, making each card even in height */
-.code-card .code-block {
+
+.project-card .project-block {
   flex-grow: 1;
 }
 
-.code-card p {
-  /* set styles to make it so code wraps in <pre> instead of overflowing */
+.project-card p {
   white-space: pre-wrap;
   overflow: auto;
   tab-size: 4;
   padding: 1.2rem 1rem;
-  color: var(--gin);
+  color: var(--white);
   border-radius: 8px;
   background-image: url(./images/placeholder.png);
   background-position: center;
@@ -158,7 +159,7 @@ footer {
 }
 
 /* on <pre> click, select all contents so the code is highlighted */
-.code-card pre:active {
+.project-card pre:active {
   user-select: all;
 }
 
@@ -202,4 +203,9 @@ font-size: 3rem;
 
 #work{
   font-size: 3rem;
+}
+
+.hr{
+  width: 98%;
+  margin: auto;
 }
