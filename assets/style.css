@@ -9,16 +9,20 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1%;
+  padding: 5%;
   background-color: #1d5996;
   color: #fff;
+}
+
+a{
+  margin-right: 5px;
 }
 
 :root {
   --dgray: #33393f;
   --blue: #2f79ce;
   --white: #f1f8f4;
-  --turquoise: #4DE8C4;
+  --turq: #4DE8C4;
   
 }
 
@@ -32,8 +36,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 1.75rem;
   line-height: 1.5;
   color: var(--white);
@@ -41,7 +44,7 @@ body {
 }
 
 a{
-  color:var(--turquoise);
+  color:var(--turq);
 }
 
 h1,
@@ -51,7 +54,7 @@ h4,
 h5,
 h6 {
   margin-bottom: 0.625rem;
-  color: var(--turquoise);
+  color: var(--turq);
   font-weight: 500;
   line-height: 1.1;
 }
@@ -128,7 +131,7 @@ footer {
   margin: -4rem 0 1.5rem 0;
   padding: 0.5rem 1rem;
   background-color: var(--dgray);
-  color: var(--turquoise);
+  color: var(--turq);
   border: 2px solid var(--white);
   border-radius: 8px;
   transition: all 0.5s ease-in-out;
@@ -136,7 +139,7 @@ footer {
 
 .project-card:hover,
 .project-card:hover .card-header {
-  box-shadow: inset 0px 0px 8px var(--turquoise), 0 0 15px var(--turquoise);
+  box-shadow: inset 0px 0px 8px var(--turq), 0 0 15px var(--turq);
 }
 
 
@@ -158,29 +161,24 @@ footer {
   align-items: center;
 }
 
-/* on <pre> click, select all contents so the code is highlighted */
 .project-card pre:active {
   user-select: all;
 }
 
-/* using a mobile-first approach, use `min-width` values going from narrow -> wide for a responsive design */
 @media screen and (min-width: 768px) {
-  /* on tablets, set columns to only be 50% of the width and not grow */
   .card-column {
     flex: 0 0 50%;
     max-width: 50%;
   }
 
-  /* select the last child to grow to full width if it has space to grow */
   .card-column:last-child {
     flex-grow: 1;
   }
 }
 
-/* media query for larger screens */
 @media screen and (min-width: 992px) {
   header {
-    width: 75%;
+    width: 100%;
   }
 
   .card-column {
